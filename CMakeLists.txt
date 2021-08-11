@@ -29,7 +29,7 @@ option(GTEST_USE_CXX17 "Enable CXX 17 standard" OFF)
 if (GTEST_USE_CXX17)
     set(CMAKE_CXX_STANDARD 17)
     if(MSVC AND MSVC_VERSION GREATER_EQUAL 1913)
-         target_compile_options("${target}" ${visibility} "-Zc:__cplusplus" "-permissive-")
+         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Zc:__cplusplus")
      endif()
 endif()
 
