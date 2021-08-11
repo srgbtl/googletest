@@ -24,6 +24,11 @@ include(GNUInstallDirs)
 #Note that googlemock target already builds googletest
 option(BUILD_GMOCK "Builds the googlemock subproject" ON)
 option(INSTALL_GTEST "Enable installation of googletest. (Projects embedding googletest may want to turn this OFF.)" ON)
+option(GTEST_USE_CXX17 "Enable CXX 17 standard" ON)
+
+if (GTEST_USE_CXX17)
+    set(CMAKE_CXX_STANDARD 17)
+endif()
 
 if(BUILD_GMOCK)
   add_subdirectory( googlemock )
