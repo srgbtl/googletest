@@ -30,8 +30,10 @@ if (GTEST_USE_CXX17)
     set(CMAKE_CXX_STANDARD 17)
     if(MSVC AND MSVC_VERSION GREATER_EQUAL 1913)
          set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Zc:__cplusplus")
-     endif()
+    endif()
 endif()
+
+message("C++ Check ${GTEST_USE_CXX17} ${CMAKE_CXX_STANDARD} ${CMAKE_CXX_FLAGS} ")
 
 if(BUILD_GMOCK)
   add_subdirectory( googlemock )
